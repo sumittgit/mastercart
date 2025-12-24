@@ -1,0 +1,128 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        * {
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            position: relative;
+        }
+
+        @keyframes imageMover {
+            from {
+                transform: translate(0);
+            }
+
+            to {
+                transform: translate(40px);
+            }
+        }
+
+        /* sec1 image scroll */
+
+        .image-scroll {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .image-scroll img {
+            transition: none;
+            transform: none;
+        }
+
+        @media(min-width: 992px) {
+            .image-scroll img {
+                overflow: hidden;
+            }
+
+        }
+
+        .image-scroll img {
+            transition: transform 6s linear;
+        }
+
+        .image-scroll:hover img {
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        /* key features section css */
+
+        .key-box {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .key-box>img {
+            transition: opacity 0.5s ease;
+        }
+
+        .key-box>p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5 ease;
+            background-color: rgba(249, 245, 245, 0.847);
+            color: grey;
+
+        }
+
+        @media (min-width: 992px) {
+            .key-box:hover img {
+                opacity: 0;
+            }
+
+            .key-box:hover>p {
+                opacity: 1;
+            }
+        }
+
+        /* cs-list css */
+
+        .cs-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .cs-list .cs-list-items {
+            border: 1px solid white;
+        }
+
+        /* hero section bg animation */
+
+        .hero-section {
+            background-image: url('./images/hero_bg.png');
+            background-size: cover;
+            background-repeat: repeat-x;
+            background-position: 0 0;
+            animation: move-bg 5s linear infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes move-bg {
+  0% {
+    background-position: 0 0;
+    background-size: 100%;
+  }
+  100% {
+    background-position: 100px 0;
+    background-size: 105%;
+  }
+}
